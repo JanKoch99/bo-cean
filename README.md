@@ -50,7 +50,6 @@ The game is designed for a single player.
 - Final release 
 
 
-
 ## TODO's
 
 - [x] Init 2D Template
@@ -66,4 +65,9 @@ The game is designed for a single player.
   - [ ] Rain / Mountains
 - [ ] Choose Sound
 - [ ] Create Documentation
-- [ ] 
+
+
+## Unapproved Ideas
+- Food as collectables
+- Boat decays --> collect material
+- Enemies --> sharks, octopus, Jan
