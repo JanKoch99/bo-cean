@@ -57,7 +57,7 @@ The game is designed for a single player.
 - [x] Create a sketch for aesthetics
 - [ ] Create first Gameobjects 
   - [ ] Boat
-  - [ ] Water
+  - [x] Water
   - [ ] Basic Obstacles
 - [ ] Create First Gamemechanics
   - [ ] Wind / Speed / Direction
