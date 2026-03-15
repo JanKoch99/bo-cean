@@ -53,8 +53,8 @@ The game is designed for a single player.
 ## TODO's
 
 - [x] Init 2D Template
-- [ ] Create a storysketch (Walkthrough / levels) --> PowerPoint
-- [ ] Create a sketch for aesthetics
+- [x] Create a storysketch (Walkthrough / levels) --> PowerPoint
+- [x] Create a sketch for aesthetics
 - [ ] Create first Gameobjects 
   - [ ] Boat
   - [ ] Water
