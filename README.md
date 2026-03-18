@@ -56,13 +56,15 @@ The game is designed for a single player.
 - [x] Create a storysketch (Walkthrough / levels) --> PowerPoint
 - [x] Create a sketch for aesthetics
 - [ ] Create first Gameobjects 
-  - [ ] Boat
+  - [x] Boat
   - [x] Water
   - [ ] Basic Obstacles
 - [ ] Create First Gamemechanics
   - [ ] Wind / Speed / Direction
   - [ ] Lighting / Waves
   - [ ] Rain / Mountains
+    - [x] Rain
+    - [ ] Mountains
 - [ ] Choose Sound
 - [ ] Create Documentation
 
@@ -75,3 +77,6 @@ The game is designed for a single player.
 
 ## Used links
 Camera follow: https://www.youtube.com/watch?v=SgdYwkJR69k
+Rain effect: https://www.youtube.com/watch?v=QP8zj-JQgmI
+Rain effect trigger: https://www.youtube.com/watch?v=t22fSj3AR0w
+UI Button for triggering Rain Effect: https://www.youtube.com/watch?v=cQ56E7M_8iM
