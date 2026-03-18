@@ -71,3 +71,7 @@ The game is designed for a single player.
 - Food as collectables
 - Boat decays --> collect material
 - Enemies --> sharks, octopus, Jan
+
+
+## Used links
+Camera follow: https://www.youtube.com/watch?v=SgdYwkJR69k
