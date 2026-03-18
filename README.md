@@ -57,7 +57,7 @@ The game is designed for a single player.
 - [x] Create a sketch for aesthetics
 - [ ] Create first Gameobjects 
   - [ ] Boat
-  - [ ] Water
+  - [x] Water
   - [ ] Basic Obstacles
 - [ ] Create First Gamemechanics
   - [ ] Wind / Speed / Direction
@@ -71,3 +71,7 @@ The game is designed for a single player.
 - Food as collectables
 - Boat decays --> collect material
 - Enemies --> sharks, octopus, Jan
+
+
+## Used links
+Camera follow: https://www.youtube.com/watch?v=SgdYwkJR69k
