@@ -2,9 +2,7 @@ using UnityEngine;
 
 public class WaterMovement : MonoBehaviour
 {
-    public float speed = 0.01f;
     private Renderer renderer;
-
 
     void Start()
     {
@@ -13,6 +11,7 @@ public class WaterMovement : MonoBehaviour
 
     void Update()
     {
+        float speed = WaterManager.Instance.waterAnimationSpeed;
         float offset = Time.time * speed;
         renderer.material.mainTextureOffset = new Vector2(0, -offset);
     }

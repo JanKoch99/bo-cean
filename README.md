@@ -58,13 +58,13 @@ The game is designed for a single player.
 - [ ] Create first Gameobjects 
   - [x] Boat
   - [x] Water
-  - [ ] Basic Obstacles
+  - [x] Basic Obstacles
 - [ ] Create First Gamemechanics
   - [ ] Wind / Speed / Direction
   - [ ] Lighting / Waves
-  - [ ] Rain / Mountains
+  - [x] Rain / Mountains
     - [x] Rain
-    - [ ] Mountains
+    - [x] Mountains
 - [ ] Choose Sound
 - [ ] Create Documentation
 
