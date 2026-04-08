@@ -5,11 +5,17 @@ public class WaterManager : MonoBehaviour
     public static WaterManager Instance;
 
     [Range(0f, 5f)] public float waterSpeed = 1f;
-    public float waterAnimationSpeed = 0.2f;
+    private float baseWaterSpeed = 1f;
+    public float waterAnimationSpeed
+    {
+        get { return waterSpeed * 0.02f; }
+    }
     
     [Range(0f, 1f)] public float waterHeight = 0f;
     private float baseHeight = 0f;
-    private Coroutine waterRoutine;
+    private Coroutine waterHeightRoutine;
+
+    private Coroutine waterSpeedRoutine;
 
     public Vector3 flowDirection = Vector3.back;
     
@@ -17,21 +23,37 @@ public class WaterManager : MonoBehaviour
     {
         Instance = this;
         baseHeight = waterHeight;
-        waterAnimationSpeed = waterSpeed * 0.02f;
+        baseWaterSpeed = waterSpeed;
     }
 
     public void IncreaseWaterHeightButton()
     {
         IncreaseWaterHeight(3f);
     }
+
+    public void IncreaseWaterSpeedButton()
+    {
+        IncreaseWaterSpeed(3f);
+    }
+    
     public void IncreaseWaterHeight(float amount)
     {
-        if (waterRoutine != null)
+        if (waterHeightRoutine != null)
         {
             return;
         }
 
-        waterRoutine = StartCoroutine(WaterPulse(amount));
+        waterHeightRoutine = StartCoroutine(WaterPulse(amount));
+    }
+
+    public void IncreaseWaterSpeed(float amount)
+    {
+        if (waterSpeedRoutine != null)
+        {
+            return;
+        }
+        
+        waterSpeedRoutine = StartCoroutine(WaterSpeedPulse(amount));
     }
 
     private IEnumerator WaterPulse(float amount)
@@ -70,6 +92,36 @@ public class WaterManager : MonoBehaviour
 
         waterHeight = baseHeight;
 
-        waterRoutine = null;
+        waterHeightRoutine = null;
+    }
+
+    private IEnumerator WaterSpeedPulse(float amount)
+    {
+        float startSpeed = waterSpeed;
+        float peakSpeed = baseWaterSpeed + amount;
+
+        // Speed up
+        yield return LerpSpeed(startSpeed, peakSpeed, 0.5f);
+
+        // hold
+        yield return new WaitForSeconds(1f);
+
+        // slow down
+        yield return LerpSpeed(peakSpeed, startSpeed, 0.5f);
+
+        waterSpeedRoutine = null;
+    }
+
+    private IEnumerator LerpSpeed(float from, float to, float duration)
+    {
+        float t = 0f;
+
+        while (t < 1f)
+        {
+            t += Time.deltaTime / duration;
+            waterSpeed = Mathf.Lerp(from, to, t);
+            yield return null;
+        }
+
     }
 }
