@@ -1,2 +1,13 @@
 fileFormatVersion: 2
 guid: 37b27ea61ea8ed64f8675605b46dc735
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - lightningPrefab: {fileID: 3206275592785688943, guid: 3db952ad5a853864695166ee724544d2, type: 3}
+  - wavePrefab: {fileID: 437475756001075152, guid: 1a0a80a1a8523c34ab38b3a33a2fdaf8, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
