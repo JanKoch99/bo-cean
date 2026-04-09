@@ -127,7 +127,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18c7d719fb79d654bb67a724f01b7710, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WaterMovement
-  speed: 0.01
 --- !u!114 &8499986972041987975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,4 +139,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98423275f032dd643bb4a1d3e1f281b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WaterSplash
-  ripplePrefab: {fileID: 0}
+  ripplePrefab: {fileID: 7278069716724754432, guid: e3424df28108d054b8ef2cc2fd479771, type: 3}

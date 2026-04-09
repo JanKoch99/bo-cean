@@ -55,13 +55,13 @@ The game is designed for a single player.
 - [x] Init 2D Template
 - [x] Create a storysketch (Walkthrough / levels) --> PowerPoint
 - [x] Create a sketch for aesthetics
-- [ ] Create first Gameobjects 
+- [x] Create first Gameobjects 
   - [x] Boat
   - [x] Water
   - [x] Basic Obstacles
-- [ ] Create First Gamemechanics
-  - [ ] Wind / Speed / Direction
-  - [ ] Lighting / Waves
+- [x] Create First Gamemechanics
+  - [x] Wind / Speed / Direction
+  - [x] Lighting / Waves
   - [x] Rain / Mountains
     - [x] Rain
     - [x] Mountains

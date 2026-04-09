@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6482815859688725731}
   - component: {fileID: 4867396371763010329}
   - component: {fileID: 4814950207905401801}
-  - component: {fileID: 3562623371702600560}
+  - component: {fileID: 4731395172208840672}
   m_Layer: 0
   m_Name: Rock
   m_TagString: Untagged
@@ -69,7 +69,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 63be8dae907de034bacc1925202002e8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DamageOnCollision
   damage: 1
---- !u!114 &3562623371702600560
+--- !u!114 &4731395172208840672
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -136,7 +136,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 757630264387402689}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94fd6e7b7d590d5469f6d1013079243c, type: 3}
+  m_Script: {fileID: 11500000, guid: 59e1a45035e1a5e428f87d376c4f6848, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FloatingObject
+  m_EditorClassIdentifier: Assembly-CSharp::SinkingObject
   speedMultiplier: 1
+  sinkOffset: 0
