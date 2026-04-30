@@ -6,6 +6,7 @@ public class LightningClickSpawner : MonoBehaviour
     public GameObject wavePrefab;
     public float spawnHeight = 5f;
     public bool canStrike = false;
+    public SoundManager soundManager;
 
     void Update()
     {
@@ -21,7 +22,9 @@ public class LightningClickSpawner : MonoBehaviour
         {
             Vector3 lightningSpawnPos = hit.point + Vector3.up * spawnHeight;
             Instantiate(lightningPrefab, lightningSpawnPos, Quaternion.identity);
-
+            
+            soundManager.PlayThunder();
+            
             if (wavePrefab != null)
             {
                 Vector3 waveSpawnPos = hit.point + Vector3.up * 0.02f;

@@ -3,6 +3,8 @@ using System.Collections;
 
 public class WaterManager : MonoBehaviour
 {
+    public SoundManager soundManager;
+    
     public static WaterManager Instance;
 
     [Range(0f, 5f)] public float waterSpeed = 1f;
@@ -60,6 +62,7 @@ public class WaterManager : MonoBehaviour
     private IEnumerator WaterSpeedPulse(float amount)
     {
         float originalSpeed = waterSpeed;
+        soundManager.PlayWind();
         float boostedSpeed = Mathf.Clamp(baseWaterSpeed + amount, 0f, 5f);
 
         waterSpeed = boostedSpeed;
@@ -78,11 +81,13 @@ public class WaterManager : MonoBehaviour
         }
 
         waterSpeed = originalSpeed;
+        soundManager.StopWind();
         waterSpeedRoutine = null;
     }
 
     private IEnumerator WaterPulse(float amount)
     {
+        soundManager.PlayRain();
         float startHeight = waterHeight;
         float targetHeight = baseHeight + amount;
 
@@ -113,6 +118,9 @@ public class WaterManager : MonoBehaviour
         }
 
         waterHeight = baseHeight;
+        soundManager.StopRain();
+        
         waterHeightRoutine = null;
+        
     }
 }
