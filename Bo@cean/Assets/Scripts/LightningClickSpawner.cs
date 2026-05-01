@@ -14,6 +14,13 @@ public class LightningClickSpawner : MonoBehaviour
     public Image cooldownImage;
     private float cooldownTimer = 0f;
 
+    public static LightningClickSpawner Instance;
+
+    void Awake()
+    {
+        Instance = this;
+    }
+
     void Update()
     {
         if (cooldownTimer > 0)

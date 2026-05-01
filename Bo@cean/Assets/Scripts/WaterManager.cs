@@ -11,6 +11,7 @@ public class WaterManager : MonoBehaviour
     [Header("Abilities Settings")]
     public float rainCooldown = 5f;
     public float windCooldown = 5f;
+    public ParticleSystem rainParticles;
 
     [Header("UI Elements")]
     public Image rainCooldownImage;
@@ -44,6 +45,28 @@ public class WaterManager : MonoBehaviour
     void Update()
     {
         UpdateCooldowns();
+        HandleInputs();
+    }
+
+    private void HandleInputs()
+    {
+        if (Input.GetKeyDown(KeyCode.Keypad1) || Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            IncreaseWaterHeightButton();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Keypad2) || Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            if (LightningClickSpawner.Instance != null)
+            {
+                LightningClickSpawner.Instance.EnableLightning();
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Keypad3) || Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            IncreaseWaterSpeedButton();
+        }
     }
 
     private void UpdateCooldowns()
@@ -129,6 +152,7 @@ public class WaterManager : MonoBehaviour
 
     private IEnumerator WaterPulse(float amount)
     {
+        if (rainParticles != null) rainParticles.Play();
         soundManager.PlayRain();
         float startHeight = waterHeight;
         float targetHeight = baseHeight + amount;
@@ -161,6 +185,7 @@ public class WaterManager : MonoBehaviour
 
         waterHeight = baseHeight;
         soundManager.StopRain();
+        if (rainParticles != null) rainParticles.Stop();
         
         waterHeightRoutine = null;
         
