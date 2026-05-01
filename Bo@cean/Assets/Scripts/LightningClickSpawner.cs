@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LightningClickSpawner : MonoBehaviour
 {
@@ -8,9 +9,21 @@ public class LightningClickSpawner : MonoBehaviour
     public bool canStrike = false;
     public SoundManager soundManager;
 
+    [Header("Cooldown Settings")]
+    public float cooldownTime = 5f;
+    public Image cooldownImage;
+    private float cooldownTimer = 0f;
+
     void Update()
     {
-        if (!canStrike || !Input.GetMouseButtonDown(0))
+        if (cooldownTimer > 0)
+        {
+            cooldownTimer -= Time.deltaTime;
+            if (cooldownImage != null)
+                cooldownImage.fillAmount = cooldownTimer / cooldownTime;
+        }
+
+        if (!canStrike || !Input.GetMouseButtonDown(0) || cooldownTimer > 0)
         {
             return;
         }
@@ -42,6 +55,7 @@ public class LightningClickSpawner : MonoBehaviour
             }
 
             canStrike = false;
+            cooldownTimer = cooldownTime;
         }
     }
 

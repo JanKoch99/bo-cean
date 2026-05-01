@@ -124,6 +124,81 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5765862921612684721, guid: 3bcba5d117bb37649b2c917b7f53ba15, type: 3}
   m_PrefabInstance: {fileID: 2229328498691591587}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &792818800
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 792818801}
+  - component: {fileID: 792818803}
+  - component: {fileID: 792818802}
+  m_Layer: 5
+  m_Name: CooldownOverlayLightning
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &792818801
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 792818800}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1031092321}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 2.5, y: -130}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &792818802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 792818800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.1, g: 0.1, b: 0.1, a: 0.5882353}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 3
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 1
+  m_FillAmount: 0
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &792818803
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 792818800}
+  m_CullTransparentMesh: 1
 --- !u!1 &921054903
 GameObject:
   m_ObjectHideFlags: 0
@@ -270,11 +345,233 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!224 &1031092321 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 5210012199982604828, guid: dd63f0b891878404cb80f3f4b966858c, type: 3}
+  m_PrefabInstance: {fileID: 9144844326779754858}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1066384477
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1066384478}
+  - component: {fileID: 1066384480}
+  - component: {fileID: 1066384479}
+  m_Layer: 5
+  m_Name: CooldownOverlay
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1066384478
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1066384477}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1118436451}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1066384479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1066384477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.1, g: 0.1, b: 0.1, a: 0.5882353}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 3
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 1
+  m_FillAmount: 0
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1066384480
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1066384477}
+  m_CullTransparentMesh: 1
+--- !u!224 &1094241357 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 5426272413875683762, guid: dd63f0b891878404cb80f3f4b966858c, type: 3}
+  m_PrefabInstance: {fileID: 9144844326779754858}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &1118436451 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2144239705301045007, guid: dd63f0b891878404cb80f3f4b966858c, type: 3}
+  m_PrefabInstance: {fileID: 9144844326779754858}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1198670587 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7650626035735663409, guid: 60c0ce021d3ede742967ae9ca547967f, type: 3}
   m_PrefabInstance: {fileID: 3569992417111141183}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1720234941
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1720234942}
+  - component: {fileID: 1720234944}
+  - component: {fileID: 1720234943}
+  m_Layer: 5
+  m_Name: CooldownOverlayWind
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1720234942
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1720234941}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1094241357}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 2.5, y: -260}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1720234943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1720234941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.1, g: 0.1, b: 0.1, a: 0.5882353}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 3
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 1
+  m_FillAmount: 0
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1720234944
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1720234941}
+  m_CullTransparentMesh: 1
+--- !u!1001 &1957449455
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2899011263797788689, guid: 660bf8a722b55464ca2fe0c6a92123d2, type: 3}
+      propertyPath: m_Name
+      value: WaterPoison
+      objectReference: {fileID: 0}
+    - target: {fileID: 7650626035735663409, guid: 660bf8a722b55464ca2fe0c6a92123d2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -46.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7650626035735663409, guid: 660bf8a722b55464ca2fe0c6a92123d2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.000019316441
+      objectReference: {fileID: 0}
+    - target: {fileID: 7650626035735663409, guid: 660bf8a722b55464ca2fe0c6a92123d2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7650626035735663409, guid: 660bf8a722b55464ca2fe0c6a92123d2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7650626035735663409, guid: 660bf8a722b55464ca2fe0c6a92123d2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7650626035735663409, guid: 660bf8a722b55464ca2fe0c6a92123d2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7650626035735663409, guid: 660bf8a722b55464ca2fe0c6a92123d2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7650626035735663409, guid: 660bf8a722b55464ca2fe0c6a92123d2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7650626035735663409, guid: 660bf8a722b55464ca2fe0c6a92123d2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7650626035735663409, guid: 660bf8a722b55464ca2fe0c6a92123d2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 660bf8a722b55464ca2fe0c6a92123d2, type: 3}
 --- !u!4 &1967463774 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4433750708095789396, guid: dd63f0b891878404cb80f3f4b966858c, type: 3}
@@ -629,16 +926,37 @@ PrefabInstance:
       propertyPath: soundManager
       value: 
       objectReference: {fileID: 921054905}
+    - target: {fileID: 7341114598088823635, guid: dd63f0b891878404cb80f3f4b966858c, type: 3}
+      propertyPath: rainCooldownImage
+      value: 
+      objectReference: {fileID: 1066384479}
+    - target: {fileID: 7341114598088823635, guid: dd63f0b891878404cb80f3f4b966858c, type: 3}
+      propertyPath: windCooldownImage
+      value: 
+      objectReference: {fileID: 1720234943}
     - target: {fileID: 7387594284867400599, guid: dd63f0b891878404cb80f3f4b966858c, type: 3}
       propertyPath: soundManager
       value: 
       objectReference: {fileID: 921054905}
+    - target: {fileID: 7387594284867400599, guid: dd63f0b891878404cb80f3f4b966858c, type: 3}
+      propertyPath: cooldownImage
+      value: 
+      objectReference: {fileID: 792818802}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 4433750708095789396, guid: dd63f0b891878404cb80f3f4b966858c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 921054904}
+    - targetCorrespondingSourceObject: {fileID: 2144239705301045007, guid: dd63f0b891878404cb80f3f4b966858c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1066384478}
+    - targetCorrespondingSourceObject: {fileID: 5210012199982604828, guid: dd63f0b891878404cb80f3f4b966858c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 792818801}
+    - targetCorrespondingSourceObject: {fileID: 5426272413875683762, guid: dd63f0b891878404cb80f3f4b966858c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1720234942}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd63f0b891878404cb80f3f4b966858c, type: 3}
 --- !u!1660057539 &9223372036854775807
@@ -651,3 +969,4 @@ SceneRoots:
   - {fileID: 6817263151985487636}
   - {fileID: 2749225180091233446}
   - {fileID: 9144844326779754858}
+  - {fileID: 1957449455}

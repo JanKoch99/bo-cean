@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class WaterManager : MonoBehaviour
@@ -6,6 +7,17 @@ public class WaterManager : MonoBehaviour
     public SoundManager soundManager;
     
     public static WaterManager Instance;
+
+    [Header("Abilities Settings")]
+    public float rainCooldown = 5f;
+    public float windCooldown = 5f;
+
+    [Header("UI Elements")]
+    public Image rainCooldownImage;
+    public Image windCooldownImage;
+
+    private float rainTimer = 0f;
+    private float windTimer = 0f;
 
     [Range(0f, 5f)] public float waterSpeed = 1f;
     private float baseWaterSpeed = 1f;
@@ -29,14 +41,44 @@ public class WaterManager : MonoBehaviour
         baseWaterSpeed = waterSpeed;
     }
 
+    void Update()
+    {
+        UpdateCooldowns();
+    }
+
+    private void UpdateCooldowns()
+    {
+        if (rainTimer > 0)
+        {
+            rainTimer -= Time.deltaTime;
+            if (rainCooldownImage != null)
+                rainCooldownImage.fillAmount = rainTimer / rainCooldown;
+        }
+
+        if (windTimer > 0)
+        {
+            windTimer -= Time.deltaTime;
+            if (windCooldownImage != null)
+                windCooldownImage.fillAmount = windTimer / windCooldown;
+        }
+    }
+
     public void IncreaseWaterHeightButton()
     {
-        IncreaseWaterHeight(3f);
+        if (rainTimer <= 0)
+        {
+            IncreaseWaterHeight(3f);
+            rainTimer = rainCooldown;
+        }
     }
 
     public void IncreaseWaterSpeedButton()
     {
-        IncreaseWaterSpeed(3f);
+        if (windTimer <= 0)
+        {
+            IncreaseWaterSpeed(3f);
+            windTimer = windCooldown;
+        }
     }
 
     public void IncreaseWaterHeight(float amount)
