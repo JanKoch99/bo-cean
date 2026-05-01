@@ -357,6 +357,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60c0ce021d3ede742967ae9ca547967f, type: 3}
+--- !u!198 &4639996974073462305 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 3625098528787055103, guid: dd63f0b891878404cb80f3f4b966858c, type: 3}
+  m_PrefabInstance: {fileID: 7003026721339145591}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5777110075379570236
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -483,6 +488,10 @@ PrefabInstance:
       propertyPath: 'CollisionModule.m_Planes.Array.data[0]'
       value: 
       objectReference: {fileID: 1198670587}
+    - target: {fileID: 6065172838026368394, guid: dd63f0b891878404cb80f3f4b966858c, type: 3}
+      propertyPath: rainParticles
+      value: 
+      objectReference: {fileID: 4639996974073462305}
     - target: {fileID: 8040566056933032673, guid: dd63f0b891878404cb80f3f4b966858c, type: 3}
       propertyPath: m_Name
       value: ManagerObject
