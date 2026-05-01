@@ -24,6 +24,12 @@ public class BoatManager : MonoBehaviour
     private void Die()
     {
         Debug.Log("Boat has died!");
+        
+        if (WaterManager.Instance != null)
+        {
+            WaterManager.Instance.waterSpeed = 0f;
+        }
+        
         // TODO: Restart level?
     }
 }
