@@ -586,6 +586,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 3473729420713722917, guid: dd63f0b891878404cb80f3f4b966858c, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3473729420713722917, guid: dd63f0b891878404cb80f3f4b966858c, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 2000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3473729420713722917, guid: dd63f0b891878404cb80f3f4b966858c, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 720
+      objectReference: {fileID: 0}
     - target: {fileID: 3625098528787055103, guid: dd63f0b891878404cb80f3f4b966858c, type: 3}
       propertyPath: 'CollisionModule.m_Planes.Array.data[0]'
       value: 

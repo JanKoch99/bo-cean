@@ -541,18 +541,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1983592494574214971, guid: 3685cf0a1427a8d429785e05fbcd099d, type: 3}
-      propertyPath: m_UiScaleMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1983592494574214971, guid: 3685cf0a1427a8d429785e05fbcd099d, type: 3}
-      propertyPath: m_ReferenceResolution.x
-      value: 2000
-      objectReference: {fileID: 0}
-    - target: {fileID: 1983592494574214971, guid: 3685cf0a1427a8d429785e05fbcd099d, type: 3}
-      propertyPath: m_ReferenceResolution.y
-      value: 720
-      objectReference: {fileID: 0}
     - target: {fileID: 6731873261736690973, guid: 3685cf0a1427a8d429785e05fbcd099d, type: 3}
       propertyPath: m_Name
       value: GameManager
