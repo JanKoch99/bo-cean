@@ -65,7 +65,7 @@ The game is designed for a single player.
   - [x] Rain / Mountains
     - [x] Rain
     - [x] Mountains
-- [ ] Choose Sound
+- [x] Choose Sound
 - [ ] Create Documentation
 
 

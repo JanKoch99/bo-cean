@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class WaterManager : MonoBehaviour
@@ -6,6 +7,18 @@ public class WaterManager : MonoBehaviour
     public SoundManager soundManager;
     
     public static WaterManager Instance;
+
+    [Header("Abilities Settings")]
+    public float rainCooldown = 5f;
+    public float windCooldown = 5f;
+    public ParticleSystem rainParticles;
+
+    [Header("UI Elements")]
+    public Image rainCooldownImage;
+    public Image windCooldownImage;
+
+    private float rainTimer = 0f;
+    private float windTimer = 0f;
 
     [Range(0f, 5f)] public float waterSpeed = 1f;
     private float baseWaterSpeed = 1f;
@@ -21,22 +34,77 @@ public class WaterManager : MonoBehaviour
     private Coroutine waterSpeedRoutine;
 
     public Vector3 flowDirection = Vector3.back;
-
+    public WaterMovement waterMovement;
+    private ResettableObject[] resettableObjects;
+    
     void Awake()
     {
         Instance = this;
         baseHeight = waterHeight;
         baseWaterSpeed = waterSpeed;
+        resettableObjects = FindObjectsOfType<ResettableObject>();
+    }
+
+    void Update()
+    {
+        UpdateCooldowns();
+        HandleInputs();
+    }
+
+    private void HandleInputs()
+    {
+        if (Input.GetKeyDown(KeyCode.Keypad1) || Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            IncreaseWaterHeightButton();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Keypad2) || Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            if (LightningClickSpawner.Instance != null)
+            {
+                LightningClickSpawner.Instance.EnableLightning();
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Keypad3) || Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            IncreaseWaterSpeedButton();
+        }
+    }
+
+    private void UpdateCooldowns()
+    {
+        if (rainTimer > 0)
+        {
+            rainTimer -= Time.deltaTime;
+            if (rainCooldownImage != null)
+                rainCooldownImage.fillAmount = rainTimer / rainCooldown;
+        }
+
+        if (windTimer > 0)
+        {
+            windTimer -= Time.deltaTime;
+            if (windCooldownImage != null)
+                windCooldownImage.fillAmount = windTimer / windCooldown;
+        }
     }
 
     public void IncreaseWaterHeightButton()
     {
-        IncreaseWaterHeight(3f);
+        if (rainTimer <= 0)
+        {
+            IncreaseWaterHeight(3f);
+            rainTimer = rainCooldown;
+        }
     }
 
     public void IncreaseWaterSpeedButton()
     {
-        IncreaseWaterSpeed(3f);
+        if (windTimer <= 0)
+        {
+            IncreaseWaterSpeed(3f);
+            windTimer = windCooldown;
+        }
     }
 
     public void IncreaseWaterHeight(float amount)
@@ -87,6 +155,7 @@ public class WaterManager : MonoBehaviour
 
     private IEnumerator WaterPulse(float amount)
     {
+        if (rainParticles != null) rainParticles.Play();
         soundManager.PlayRain();
         float startHeight = waterHeight;
         float targetHeight = baseHeight + amount;
@@ -119,8 +188,54 @@ public class WaterManager : MonoBehaviour
 
         waterHeight = baseHeight;
         soundManager.StopRain();
+        if (rainParticles != null) rainParticles.Stop();
         
         waterHeightRoutine = null;
         
+    }
+    
+    public void Reset()
+    {
+        Debug.Log("Reset!");
+
+        // Stop active coroutines
+        if (waterHeightRoutine != null)
+        {
+            StopCoroutine(waterHeightRoutine);
+            waterHeightRoutine = null;
+        }
+
+        if (waterSpeedRoutine != null)
+        {
+            StopCoroutine(waterSpeedRoutine);
+            waterSpeedRoutine = null;
+        }
+
+        // Stop effects
+        soundManager.StopRain();
+        soundManager.StopWind();
+
+        if (rainParticles != null)
+            rainParticles.Stop();
+
+        // Reset values
+        waterSpeed = baseWaterSpeed;
+        waterHeight = baseHeight;
+
+        // Reset timers
+        rainTimer = 0f;
+        windTimer = 0f;
+
+        // Reset objects
+        foreach (ResettableObject obj in resettableObjects)
+        {
+            obj.ResetObject();
+        }
+        
+        // Reset position
+        if (waterMovement != null)
+        {
+            waterMovement.ResetWater();
+        }
     }
 }

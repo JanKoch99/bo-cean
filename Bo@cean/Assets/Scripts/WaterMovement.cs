@@ -21,4 +21,12 @@ public class WaterMovement : MonoBehaviour
         textureOffsetY += speed * Time.deltaTime;
         waterRenderer.material.mainTextureOffset = new Vector2(0, -textureOffsetY);
     }
+    
+    public void ResetWater()
+    {
+        textureOffsetY = 0f;
+
+        waterRenderer.material.mainTextureOffset =
+            Vector2.zero;
+    }
 }
