@@ -34,12 +34,15 @@ public class WaterManager : MonoBehaviour
     private Coroutine waterSpeedRoutine;
 
     public Vector3 flowDirection = Vector3.back;
-
+    public WaterMovement waterMovement;
+    private ResettableObject[] resettableObjects;
+    
     void Awake()
     {
         Instance = this;
         baseHeight = waterHeight;
         baseWaterSpeed = waterSpeed;
+        resettableObjects = FindObjectsOfType<ResettableObject>();
     }
 
     void Update()
@@ -189,5 +192,50 @@ public class WaterManager : MonoBehaviour
         
         waterHeightRoutine = null;
         
+    }
+    
+    public void Reset()
+    {
+        Debug.Log("Reset!");
+
+        // Stop active coroutines
+        if (waterHeightRoutine != null)
+        {
+            StopCoroutine(waterHeightRoutine);
+            waterHeightRoutine = null;
+        }
+
+        if (waterSpeedRoutine != null)
+        {
+            StopCoroutine(waterSpeedRoutine);
+            waterSpeedRoutine = null;
+        }
+
+        // Stop effects
+        soundManager.StopRain();
+        soundManager.StopWind();
+
+        if (rainParticles != null)
+            rainParticles.Stop();
+
+        // Reset values
+        waterSpeed = baseWaterSpeed;
+        waterHeight = baseHeight;
+
+        // Reset timers
+        rainTimer = 0f;
+        windTimer = 0f;
+
+        // Reset objects
+        foreach (ResettableObject obj in resettableObjects)
+        {
+            obj.ResetObject();
+        }
+        
+        // Reset position
+        if (waterMovement != null)
+        {
+            waterMovement.ResetWater();
+        }
     }
 }
