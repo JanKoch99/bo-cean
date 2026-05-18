@@ -17,34 +17,34 @@ public class BoatManager : MonoBehaviour
     public void TakeDamage(int amount)
     {
         currentHealth -= amount;
-        Debug.Log("Boat took damage! Current health: " + currentHealth);
+        // Debug.Log("Boat took damage! Current health: " + currentHealth);
         if (currentHealth >= 3)
         {
-            Debug.Log("in >=3");
             heart1.SetActive(true);
             heart2.SetActive(true);
             heart3.SetActive(true);
         }
         else if (currentHealth == 2)
         {
-            Debug.Log("in ==2");
             heart1.SetActive(true);
             heart2.SetActive(true);
             heart3.SetActive(false);        
         }
         else if (currentHealth == 1)
         {
-            Debug.Log("in ==1");
             heart1.SetActive(true);
             heart2.SetActive(false);
             heart3.SetActive(false);
         }
         else if (currentHealth <= 0)
         {
-            Debug.Log("in <=0");
             heart1.SetActive(false);
             heart2.SetActive(false);
             heart3.SetActive(false);
+        }
+
+        if (currentHealth <= 0)
+        {
             Die();
         }
     }

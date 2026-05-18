@@ -173,7 +173,7 @@ public class WaterManager : MonoBehaviour
 
         waterHeight = targetHeight;
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(4f);
 
         time = 0f;
         duration = 0.5f;

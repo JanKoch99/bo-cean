@@ -35,8 +35,23 @@ public class SceneController : MonoBehaviour
     IEnumerator LoadLevel()
     {
         tansitionAnim.SetTrigger("End");
+
         yield return new WaitForSeconds(1);
-        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
+
+        int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+
+        // Check if another scene exists
+        if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
+        {
+            SceneManager.LoadSceneAsync(nextSceneIndex);
+        }
+        else
+        {
+            Debug.Log("No more scenes. Loading Main Menu.");
+
+            SceneManager.LoadScene("Main Menu");
+        }
+
         tansitionAnim.SetTrigger("Start");
 
     }
