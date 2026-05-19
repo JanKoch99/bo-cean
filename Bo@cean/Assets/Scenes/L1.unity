@@ -691,6 +691,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -3.9
       objectReference: {fileID: 0}
+    - target: {fileID: 3516570860920360520, guid: dd63f0b891878404cb80f3f4b966858c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f00d985a14fb1d342a51e6f08067d815, type: 3}
     - target: {fileID: 4048346760382828946, guid: dd63f0b891878404cb80f3f4b966858c, type: 3}
       propertyPath: cooldownImage
       value: 
@@ -711,6 +715,10 @@ PrefabInstance:
       propertyPath: 'CollisionModule.m_Planes.Array.data[0]'
       value: 
       objectReference: {fileID: 1198670587}
+    - target: {fileID: 7075786310995243051, guid: dd63f0b891878404cb80f3f4b966858c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f00d985a14fb1d342a51e6f08067d815, type: 3}
     - target: {fileID: 7462040773635249658, guid: dd63f0b891878404cb80f3f4b966858c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.06257
@@ -759,6 +767,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7747412736471261671, guid: dd63f0b891878404cb80f3f4b966858c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7747412736471261671, guid: dd63f0b891878404cb80f3f4b966858c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7747412736471261671, guid: dd63f0b891878404cb80f3f4b966858c, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7747412736471261671, guid: dd63f0b891878404cb80f3f4b966858c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -150
+      objectReference: {fileID: 0}
+    - target: {fileID: 7747412736471261671, guid: dd63f0b891878404cb80f3f4b966858c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7898450340878240071, guid: dd63f0b891878404cb80f3f4b966858c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f00d985a14fb1d342a51e6f08067d815, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 3213076090334890753, guid: dd63f0b891878404cb80f3f4b966858c, type: 3}

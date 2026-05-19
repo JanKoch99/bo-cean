@@ -20,7 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/L4.unity
     guid: 1eb662200c57aac46a21c523c21eecb4
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Template.unity
     guid: d3d36812c8c60c141bd7effc4f21d2e2
   m_configObjects: {}

@@ -711,6 +711,10 @@ PrefabInstance:
       propertyPath: waterMovement
       value: 
       objectReference: {fileID: 2068341727}
+    - target: {fileID: 3516570860920360520, guid: dd63f0b891878404cb80f3f4b966858c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f00d985a14fb1d342a51e6f08067d815, type: 3}
     - target: {fileID: 5801042379061052629, guid: dd63f0b891878404cb80f3f4b966858c, type: 3}
       propertyPath: m_Name
       value: ManagerObject
@@ -723,6 +727,10 @@ PrefabInstance:
       propertyPath: 'CollisionModule.m_Planes.Array.data[0]'
       value: 
       objectReference: {fileID: 1198670587}
+    - target: {fileID: 7075786310995243051, guid: dd63f0b891878404cb80f3f4b966858c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f00d985a14fb1d342a51e6f08067d815, type: 3}
     - target: {fileID: 7609873954798081426, guid: dd63f0b891878404cb80f3f4b966858c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.93743
@@ -763,6 +771,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7747412736471261671, guid: dd63f0b891878404cb80f3f4b966858c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7747412736471261671, guid: dd63f0b891878404cb80f3f4b966858c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7747412736471261671, guid: dd63f0b891878404cb80f3f4b966858c, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7747412736471261671, guid: dd63f0b891878404cb80f3f4b966858c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -150
+      objectReference: {fileID: 0}
+    - target: {fileID: 7747412736471261671, guid: dd63f0b891878404cb80f3f4b966858c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7898450340878240071, guid: dd63f0b891878404cb80f3f4b966858c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f00d985a14fb1d342a51e6f08067d815, type: 3}
     m_RemovedComponents:
     - {fileID: 3471721378004741286, guid: dd63f0b891878404cb80f3f4b966858c, type: 3}
     m_RemovedGameObjects:
