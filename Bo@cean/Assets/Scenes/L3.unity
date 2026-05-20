@@ -707,6 +707,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1354277810840584909, guid: dd63f0b891878404cb80f3f4b966858c, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1354277810840584909, guid: dd63f0b891878404cb80f3f4b966858c, type: 3}
+      propertyPath: m_Color.b
+      value: 0.21960786
+      objectReference: {fileID: 0}
+    - target: {fileID: 1354277810840584909, guid: dd63f0b891878404cb80f3f4b966858c, type: 3}
+      propertyPath: m_Color.g
+      value: 0.21960786
+      objectReference: {fileID: 0}
+    - target: {fileID: 1354277810840584909, guid: dd63f0b891878404cb80f3f4b966858c, type: 3}
+      propertyPath: m_Color.r
+      value: 0.21960786
+      objectReference: {fileID: 0}
     - target: {fileID: 1537605598884419268, guid: dd63f0b891878404cb80f3f4b966858c, type: 3}
       propertyPath: waterMovement
       value: 
@@ -718,6 +734,18 @@ PrefabInstance:
     - target: {fileID: 5801042379061052629, guid: dd63f0b891878404cb80f3f4b966858c, type: 3}
       propertyPath: m_Name
       value: ManagerObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 6065172838026368394, guid: dd63f0b891878404cb80f3f4b966858c, type: 3}
+      propertyPath: rainParticles
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6065172838026368394, guid: dd63f0b891878404cb80f3f4b966858c, type: 3}
+      propertyPath: rainCooldownImage
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6065172838026368394, guid: dd63f0b891878404cb80f3f4b966858c, type: 3}
+      propertyPath: windCooldownImage
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6130791553213640128, guid: dd63f0b891878404cb80f3f4b966858c, type: 3}
       propertyPath: Target.TrackingTarget
