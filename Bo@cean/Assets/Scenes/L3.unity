@@ -320,16 +320,24 @@ PrefabInstance:
       value: WaterPoison (1)
       objectReference: {fileID: 0}
     - target: {fileID: 7650626035735663409, guid: 660bf8a722b55464ca2fe0c6a92123d2, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 10.187
+      objectReference: {fileID: 0}
+    - target: {fileID: 7650626035735663409, guid: 660bf8a722b55464ca2fe0c6a92123d2, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 10.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7650626035735663409, guid: 660bf8a722b55464ca2fe0c6a92123d2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 62.8
+      value: 61.8635
       objectReference: {fileID: 0}
     - target: {fileID: 7650626035735663409, guid: 660bf8a722b55464ca2fe0c6a92123d2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.000019316441
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 7650626035735663409, guid: 660bf8a722b55464ca2fe0c6a92123d2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 12.7
+      value: 13.4492
       objectReference: {fileID: 0}
     - target: {fileID: 7650626035735663409, guid: 660bf8a722b55464ca2fe0c6a92123d2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -693,7 +701,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7650626035735663409, guid: 660bf8a722b55464ca2fe0c6a92123d2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.000019316441
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 7650626035735663409, guid: 660bf8a722b55464ca2fe0c6a92123d2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1145,6 +1153,14 @@ PrefabInstance:
     - target: {fileID: 2899011263797788689, guid: 60c0ce021d3ede742967ae9ca547967f, type: 3}
       propertyPath: m_Name
       value: Water
+      objectReference: {fileID: 0}
+    - target: {fileID: 7650626035735663409, guid: 60c0ce021d3ede742967ae9ca547967f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 6.0215
+      objectReference: {fileID: 0}
+    - target: {fileID: 7650626035735663409, guid: 60c0ce021d3ede742967ae9ca547967f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 6.288078
       objectReference: {fileID: 0}
     - target: {fileID: 7650626035735663409, guid: 60c0ce021d3ede742967ae9ca547967f, type: 3}
       propertyPath: m_LocalPosition.x
