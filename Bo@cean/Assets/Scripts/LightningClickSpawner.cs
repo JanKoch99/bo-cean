@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class LightningClickSpawner : MonoBehaviour
 {
@@ -15,10 +16,20 @@ public class LightningClickSpawner : MonoBehaviour
     private float cooldownTimer = 0f;
 
     public static LightningClickSpawner Instance;
+    private bool initialCanStrike;
 
     void Awake()
     {
         Instance = this;
+        initialCanStrike = canStrike;
+    }
+
+    public void ResetSpawner()
+    {
+        cooldownTimer = 0f;
+        canStrike = initialCanStrike;
+        if (cooldownImage != null)
+            cooldownImage.fillAmount = 0f;
     }
 
     void Update()
@@ -31,6 +42,11 @@ public class LightningClickSpawner : MonoBehaviour
         }
 
         if (!canStrike || !Input.GetMouseButtonDown(0) || cooldownTimer > 0)
+        {
+            return;
+        }
+
+        if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
         {
             return;
         }

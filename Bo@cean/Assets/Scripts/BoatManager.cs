@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BoatManager : MonoBehaviour
 {
@@ -50,22 +51,15 @@ public class BoatManager : MonoBehaviour
     
     private void Die()
     {
-
         if (WaterManager.Instance != null)
         {
-            StartCoroutine(WaterManager.Instance.Die());
+            WaterManager.Instance.StartDie();
         }
-        Respawn();
+        Invoke("Respawn", 2f);
     }
 
     private void Respawn()
     {
-        heart1.SetActive(true);
-        heart2.SetActive(true);
-        heart3.SetActive(true);
-        transform.position = startPos;
-        currentHealth = maxHealth;
-
-        WaterManager.Instance.Reset();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

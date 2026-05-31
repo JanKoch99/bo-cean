@@ -35,10 +35,11 @@ public class WaterManager : MonoBehaviour
     private float baseHeight = 0f;
     private Coroutine waterHeightRoutine;
     private Coroutine waterSpeedRoutine;
+    private Coroutine dieRoutine;
 
     public Vector3 flowDirection = Vector3.back;
-    public WaterMovement waterMovement;
     private ResettableObject[] resettableObjects;
+    private SharkObject[] sharkObjects;
     
     void Awake()
     {
@@ -46,6 +47,7 @@ public class WaterManager : MonoBehaviour
         baseHeight = waterHeight;
         baseWaterSpeed = waterSpeed;
         resettableObjects = FindObjectsOfType<ResettableObject>();
+        sharkObjects = FindObjectsOfType<SharkObject>();
     }
 
     void Update()
@@ -160,6 +162,15 @@ public class WaterManager : MonoBehaviour
         }
     }
 
+    public void StartDie()
+    {
+        if (dieRoutine != null)
+        {
+            StopCoroutine(dieRoutine);
+        }
+        dieRoutine = StartCoroutine(Die());
+    }
+
     public IEnumerator Die()
     {
         isDead = true;
@@ -182,6 +193,7 @@ public class WaterManager : MonoBehaviour
 
         waterSpeed = originalSpeed;
         waterSpeedRoutine = null;
+        dieRoutine = null;
         isDead = false;
     }
 
@@ -254,8 +266,15 @@ public class WaterManager : MonoBehaviour
     
     public void Reset()
     {
-
         // Stop active coroutines
+        if (dieRoutine != null)
+        {
+            StopCoroutine(dieRoutine);
+            dieRoutine = null;
+        }
+
+        isDead = false;
+
         if (waterHeightRoutine != null)
         {
             StopCoroutine(waterHeightRoutine);
@@ -283,16 +302,15 @@ public class WaterManager : MonoBehaviour
         rainTimer = 0f;
         windTimer = 0f;
 
-        // Reset objects
-        foreach (ResettableObject obj in resettableObjects)
+        if (rainCooldownImage != null)
+            rainCooldownImage.fillAmount = 0f;
+        if (windCooldownImage != null)
+            windCooldownImage.fillAmount = 0f;
+
+        // Reset Spawner
+        if (LightningClickSpawner.Instance != null)
         {
-            obj.ResetObject();
-        }
-        
-        // Reset position
-        if (waterMovement != null)
-        {
-            waterMovement.ResetWater();
+            LightningClickSpawner.Instance.ResetSpawner();
         }
     }
 }

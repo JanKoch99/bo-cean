@@ -9,9 +9,14 @@ public class SharkObject : FloatingObject
     private float leftX;
     private float rightX;
     private bool movingToRight;
+    private Vector3 initialPosition;
+    private Quaternion initialRotation;
+    private bool initialMovingToRight;
 
     protected void Start()
     {
+        initialPosition = transform.position;
+        initialRotation = transform.rotation;
         if (movementDirection != Vector3.left && movementDirection != Vector3.right)
         {
             movementDirection = Vector3.left;
@@ -30,6 +35,14 @@ public class SharkObject : FloatingObject
             rightX = startX + distanceToMove;
             movingToRight = true;
         }
+        initialMovingToRight = movingToRight;
+    }
+
+    public void ResetShark()
+    {
+        transform.position = initialPosition;
+        transform.rotation = initialRotation;
+        movingToRight = initialMovingToRight;
     }
 
     protected override void Update()
