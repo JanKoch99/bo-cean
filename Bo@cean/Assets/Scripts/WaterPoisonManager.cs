@@ -17,6 +17,9 @@ public class WaterPoisonManager : MonoBehaviour
     private bool blinkState = true;
     private float blinkInterval = 0.25f;
 
+    private GUIStyle warningStyle;
+    private GUIStyle warningShadowStyle;
+
     private void OnTriggerEnter(Collider other)
     {
         BoatManager boat = other.GetComponentInParent<BoatManager>();
@@ -81,11 +84,17 @@ public class WaterPoisonManager : MonoBehaviour
     {
         if (showWarning && blinkState)
         {
-            GUIStyle style = new GUIStyle();
-            style.fontSize = 40;
-            style.fontStyle = FontStyle.Bold;
-            style.normal.textColor = Color.red;
-            style.alignment = TextAnchor.MiddleCenter;
+            if (warningStyle == null)
+            {
+                warningStyle = new GUIStyle();
+                warningStyle.fontSize = 40;
+                warningStyle.fontStyle = FontStyle.Bold;
+                warningStyle.normal.textColor = Color.red;
+                warningStyle.alignment = TextAnchor.MiddleCenter;
+
+                warningShadowStyle = new GUIStyle(warningStyle);
+                warningShadowStyle.normal.textColor = Color.black;
+            }
 
             // Zeichne die Nachricht in der Mitte des Bildschirms
             float width = Screen.width;
@@ -94,11 +103,8 @@ public class WaterPoisonManager : MonoBehaviour
             float y = (Screen.height - height) * 0.5f;
 
             // Schatten für bessere Lesbarkeit
-            GUIStyle shadowStyle = new GUIStyle(style);
-            shadowStyle.normal.textColor = Color.black;
-            GUI.Label(new Rect(x + 2, y + 2, width, height), warningMessage, shadowStyle);
-            
-            GUI.Label(new Rect(x, y, width, height), warningMessage, style);
+            GUI.Label(new Rect(x + 2, y + 2, width, height), warningMessage, warningShadowStyle);
+            GUI.Label(new Rect(x, y, width, height), warningMessage, warningStyle);
         }
     }
 }

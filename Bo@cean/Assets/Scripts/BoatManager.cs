@@ -17,7 +17,6 @@ public class BoatManager : MonoBehaviour
     public void TakeDamage(int amount)
     {
         currentHealth -= amount;
-        // Debug.Log("Boat took damage! Current health: " + currentHealth);
         if (currentHealth >= 3)
         {
             heart1.SetActive(true);
@@ -51,15 +50,12 @@ public class BoatManager : MonoBehaviour
     
     private void Die()
     {
-        Debug.Log("Boat has died!");
-        
-        // if (WaterManager.Instance != null)
-        // {
-        //     WaterManager.Instance.waterSpeed = 0f;
-        // }
 
+        if (WaterManager.Instance != null)
+        {
+            StartCoroutine(WaterManager.Instance.Die());
+        }
         Respawn();
-        // TODO: Restart level?
     }
 
     private void Respawn()

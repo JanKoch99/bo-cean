@@ -11,8 +11,6 @@ public class Checkpoint : FloatingObject
 
     private void OnTriggerEnter(Collider collision)
     {
-        Debug.Log("Trigger Enter");
-
         if (collision.CompareTag("Boat"))
         {
             checkpointText.SetActive(true);

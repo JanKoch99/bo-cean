@@ -16,6 +16,9 @@ public class WaterManager : MonoBehaviour
     [Header("UI Elements")]
     public Image rainCooldownImage;
     public Image windCooldownImage;
+    
+    public string warningMessage = "You died, try again!";
+    public float warningMessageDuration = 2f;
 
     private float rainTimer = 0f;
     private float windTimer = 0f;
@@ -127,6 +130,61 @@ public class WaterManager : MonoBehaviour
         waterSpeedRoutine = StartCoroutine(WaterSpeedPulse(amount));
     }
 
+    private bool isDead = false;
+    private GUIStyle deathStyle;
+    private GUIStyle deathShadowStyle;
+
+    private void OnGUI()
+    {
+        if (isDead)
+        {
+            if (deathStyle == null)
+            {
+                deathStyle = new GUIStyle();
+                deathStyle.fontSize = 40;
+                deathStyle.fontStyle = FontStyle.Bold;
+                deathStyle.normal.textColor = Color.red;
+                deathStyle.alignment = TextAnchor.MiddleCenter;
+
+                deathShadowStyle = new GUIStyle(deathStyle);
+                deathShadowStyle.normal.textColor = Color.black;
+            }
+
+            float width = Screen.width;
+            float height = 100f;
+            float x = 0;
+            float y = (Screen.height - height) * 0.5f;
+
+            GUI.Label(new Rect(x + 2, y + 2, width, height), warningMessage, deathShadowStyle);
+            GUI.Label(new Rect(x, y, width, height), warningMessage, deathStyle);
+        }
+    }
+
+    public IEnumerator Die()
+    {
+        isDead = true;
+        float originalSpeed = waterSpeed;
+        float boostedSpeed = Mathf.Clamp(0f, 0f, 5f);
+        waterSpeed = boostedSpeed;
+        
+        yield return new WaitForSeconds(1f);
+        
+        float time = 0f;
+        float duration = 0.5f;
+
+        while (time < duration)
+        {
+            time += Time.deltaTime;
+            float t = time / duration;
+            waterSpeed = Mathf.Lerp(boostedSpeed, originalSpeed, t);
+            yield return null;
+        }
+
+        waterSpeed = originalSpeed;
+        waterSpeedRoutine = null;
+        isDead = false;
+    }
+
     private IEnumerator WaterSpeedPulse(float amount)
     {
         float originalSpeed = waterSpeed;
@@ -196,7 +254,6 @@ public class WaterManager : MonoBehaviour
     
     public void Reset()
     {
-        Debug.Log("Reset!");
 
         // Stop active coroutines
         if (waterHeightRoutine != null)
