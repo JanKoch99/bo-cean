@@ -537,6 +537,7 @@ GameObject:
   - component: {fileID: 6275133210896410928}
   - component: {fileID: 9219211210940229327}
   - component: {fileID: 4651012300815889155}
+  - component: {fileID: 4323173644150075678}
   m_Layer: 0
   m_Name: SoundManager
   m_TagString: Untagged
@@ -572,7 +573,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.743
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -669,9 +670,108 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SoundManager
   audioSource: {fileID: 9219211210940229327}
+  musicSource: {fileID: 9219211210940229327}
+  backgroundMusic: {fileID: 8300000, guid: d41be9c43a24a4e769356673bcfa4fd0, type: 3}
   rainSound: {fileID: 8300000, guid: 3a9e52985b9e3c54c9979718b76095ac, type: 3}
   thunderSound: {fileID: 8300000, guid: 7dc48ac47b618424f8d032a339525809, type: 3}
-  windSound: {fileID: 0}
+  windSound: {fileID: 8300000, guid: 6b8c847dd56c0df42b22122edfd7bd8e, type: 3}
+--- !u!82 &4323173644150075678
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1863626006367710524}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: d41be9c43a24a4e769356673bcfa4fd0, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.02
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1941715243301508564
 GameObject:
   m_ObjectHideFlags: 0
@@ -2457,10 +2557,11 @@ MonoBehaviour:
   rainParticles: {fileID: 3625098528787055103}
   rainCooldownImage: {fileID: 8902141548642033006}
   windCooldownImage: {fileID: 8450262253619683522}
+  warningMessage: You died, try again!
+  warningMessageDuration: 2
   waterSpeed: 1
   waterHeight: 0.5
   flowDirection: {x: 0, y: 0, z: -1}
-  waterMovement: {fileID: 0}
 --- !u!1 &6486723991340069419
 GameObject:
   m_ObjectHideFlags: 0
